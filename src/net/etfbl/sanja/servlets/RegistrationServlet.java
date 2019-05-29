@@ -44,20 +44,20 @@ public class RegistrationServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		int age = Integer.parseInt(request.getParameter("age"));
 		
-//		UserDAO userDAO = new UserMySql();
-//		boolean registrationSuccess = userDAO.insert(User.builder()
-//				.firstname(firstname)
-//				.lastname(lastname)
-//				.username(username)
-//				.password(password)
-//				.age(age)
-//				.build());
-//		
-//		if(registrationSuccess) {
-//			response.getWriter().println("Registration success.");
-//		} else {
-//			response.getWriter().println("Registration failed.");
-//		}
+		UserDAO userDAO = new UserMySql();
+		boolean registrationSuccess = userDAO.insert(User.builder()
+				.firstname(firstname)
+				.lastname(lastname)
+				.username(username)
+				.password(password)
+				.age(age)
+				.build());
+		
+		if(registrationSuccess) {
+			response.getWriter().println("Registration success.");
+		} else {
+			response.getWriter().println("Registration failed.");
+		}
 	}
 
 }
